@@ -36,12 +36,11 @@ app.get('/getRestaurantDetails/:id',function(req,res){
 		
 })
 
-app.get('/getRestaurantId/:name/:city/:street/:state',function(req,res){
+app.get('/getRestaurantId/:name/:city/:state',function(req,res){
 	
 	http.get("https://maps.googleapis.com/maps/api/place/textsearch/json?query="+req.params.name+"+"+
 																				+req.params.city+"+"+
-																				+req.params.street+"+"+
-																				+req.params.state+).then(function(response){
+																				+req.params.state).then(function(response){
 	    res.header('Access-Control-Allow-Origin', '*');
 	     res.header('Access-Control-Allow-Methods', 'PUT, GET, POST, DELETE, OPTIONS');
 	     res.header('Access-Control-Allow-Headers', 'accept, content-type, x-parse-application-id, x-parse-rest-api-key, x-parse-session-token');
