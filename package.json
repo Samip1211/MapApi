@@ -7,8 +7,15 @@
     "test": "echo \"Error: no test specified\" && exit 1",
 	"start":"node mapapi.js"
   },
-  "devDependencies":{
+  "dependencies": {
+     
+      "express": "2.3.x",
 	  "requestify":"*"
+      
+    },
+  "devDependencies":{
+	  
+	  
   },
   "author": "",
   "license": "ISC"
