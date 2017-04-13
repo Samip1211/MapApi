@@ -11,7 +11,10 @@ app.get('/listUsers', function (req, res) {
 	http.get("https://maps.googleapis.com/maps/api/place/details/json?placeid=ChIJ_UypeeMuTIYRGtrKERCRj2U&key=AIzaSyAQvpmdy7gi3VVH	uG0hnR0dRaU31MjtQas").then(function(response) {
 	    // Get the response body (JSON parsed - JSON response or jQuery object in case of XML response)
 	    console.log(response.getBody());
-		res.addHeader("Access-Control-Allow-Origin", "*");
+	    res.header('Access-Control-Allow-Origin', '*');
+	       res.header('Access-Control-Allow-Methods', 'PUT, GET, POST, DELETE, OPTIONS');
+	       res.header('Access-Control-Allow-Headers', 'accept, content-type, x-parse-application-id, x-parse-rest-api-key, x-parse-session-token');
+		
 		res.end(response.body);
 	    // Get the response raw body
 	    console.log(response.body);
