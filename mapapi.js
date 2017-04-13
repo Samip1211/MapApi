@@ -13,8 +13,8 @@ app.get('/getRestaurant/:latittude/:longitude', function (req, res) {
 	    // Get the response body (JSON parsed - JSON response or jQuery object in case of XML response)
 	    //console.log(response.getBody());
 	    res.header('Access-Control-Allow-Origin', '*');
-	       res.header('Access-Control-Allow-Methods', 'PUT, GET, POST, DELETE, OPTIONS');
-	       res.header('Access-Control-Allow-Headers', 'accept, content-type, x-parse-application-id, x-parse-rest-api-key, x-parse-session-token');
+	     res.header('Access-Control-Allow-Methods', 'PUT, GET, POST, DELETE, OPTIONS');
+	     res.header('Access-Control-Allow-Headers', 'accept, content-type, x-parse-application-id, x-parse-rest-api-key, x-parse-session-token');
 		
 		res.end(response.body);
 	    // Get the response raw body
@@ -24,7 +24,7 @@ app.get('/getRestaurant/:latittude/:longitude', function (req, res) {
 	
 })
 
-var server = app.listen(8080, function () {
+var server = app.listen(process.env.PORT, function () {
 
   var host = server.address().address
   var port = server.address().port
