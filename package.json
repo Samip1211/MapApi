@@ -9,7 +9,7 @@
   },
   "dependencies": {
      
-      "express": "2.3.x",
+      "express": "3.x.x",
 	  "requestify":"*"
       
     },
