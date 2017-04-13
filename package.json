@@ -1,0 +1,12 @@
+{
+  "name": "map_api_folder",
+  "version": "1.0.0",
+  "description": "",
+  "main": "mapapi.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+	"start":"node mapapi.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
