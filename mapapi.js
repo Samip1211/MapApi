@@ -2,7 +2,9 @@ var express = require('express');
 var app = express();
 
 var http = require("requestify");
-
+app.get('/',function(req,res){
+	res.end("Hello")
+})
 app.get('/listUsers', function (req, res) {
 	var reponseObject;
 	http.get("https://maps.googleapis.com/maps/api/place/details/json?placeid=ChIJ_UypeeMuTIYRGtrKERCRj2U&key=AIzaSyAQvpmdy7gi3VVH	uG0hnR0dRaU31MjtQas").then(function(response) {
