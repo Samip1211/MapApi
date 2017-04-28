@@ -36,6 +36,15 @@ app.get('/getRestaurantDetails/:id',function(req,res){
 		
 })
 
+app.get('/getRestaurantMap/:id',function(req,res){
+	http.get('https://www.google.com/maps/embed/v1/place?key=AIzaSyBDziLzYLL-LKfwOkofcd23p1K4WlZ38Lc&q=place_id:'+req.params.id).then(function(response){
+	    res.header('Access-Control-Allow-Origin', '*');
+	     res.header('Access-Control-Allow-Methods', 'PUT, GET, POST, DELETE, OPTIONS');
+	     res.header('Access-Control-Allow-Headers', 'accept, content-type, x-parse-application-id, x-parse-rest-api-key, x-parse-session-token');
+		 res.end(response.body);
+	})
+})
+
 app.get('/getRestaurantId/:name/:city/:state',function(req,res){
 	
 	http.get("https://maps.googleapis.com/maps/api/place/textsearch/json?query="+req.params.name+"+"+
